@@ -39,5 +39,9 @@ else:
 def user_input():
     date = input("input the date yyyymmdd")  # 调用系统时间自动生成
     weight = input("input the weight: ")
-    if weight ==   # 判断输入是否为整数或浮点数
+    if int(weight) == True  # 判断输入是否为整数或浮点数
+        print("OK")
         # 判断有效范围，大于0，小于100，单位kg
+    else:
+        print("not int or float")
+
