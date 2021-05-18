@@ -91,7 +91,7 @@ def data_output():
     plt.plot(dates, weights, c='red')
 
     plt.title("Weight Record 2021", fontsize=24)
-    plt.xlabel("Date", fontsize=16)
+    plt.xlabel("", fontsize=16)
     fig.autofmt_xdate()  # 绘制斜的日期标签
     plt.ylabel("Weight (Kg)", fontsize=16)
     plt.tick_params(axis='both', which='major', labelsize=8)
