@@ -93,8 +93,8 @@ def data_output():
     plt.title("Weight Record 2021", fontsize=24)
     plt.xlabel("Date", fontsize=16)
     fig.autofmt_xdate()  # 绘制斜的日期标签
-    plt.ylabel("Weight", fontsize=16)
-    plt.tick_params(axis='both', which='major', labelsize=16)
+    plt.ylabel("Weight (Kg)", fontsize=16)
+    plt.tick_params(axis='both', which='major', labelsize=8)
 
     # plt.show()
     saved_file = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
