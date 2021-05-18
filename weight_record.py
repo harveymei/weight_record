@@ -33,8 +33,10 @@ if not os.path.exists(filename):
         f.write('Date,Height,Weight,BMI\n')
 
 
-# 定义数据录入函数
 def data_input():
+    """
+    数据录入函数
+    """
     # 获取当前系统时间
     system_date = datetime.datetime.now().strftime('%Y-%m-%d')  # 日期对象转换为日期字符串
 
