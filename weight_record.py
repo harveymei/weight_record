@@ -35,8 +35,8 @@ if not os.path.exists(filename):
 
 # 定义数据录入函数
 def data_input():
-    # 获取当前系统时间数据 current_date current_time
-    system_date = datetime.datetime.now().strftime('%Y-%m-%d')
+    # 获取当前系统时间数据
+    system_date = datetime.datetime.now().strftime('%Y-%m-%d')  # 日期对象转换为日期字符串
 
     # 获取用户输入输入
     current_date = input("请输入当前日期数值或直接按回车键使用默认数值: " + "(" + system_date + ") ")
@@ -100,7 +100,7 @@ def data_output():
     plt.tick_params(axis='both', which='major', labelsize=8)
 
     # plt.show()
-    saved_file = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    saved_file = datetime.datetime.now().strftime('%Y%m%d%H%M%S')  # 日期对象转换为日期字符串
     plt.savefig(saved_file + '.png')
 
 
