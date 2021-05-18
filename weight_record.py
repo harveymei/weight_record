@@ -20,7 +20,7 @@ Python Crash Book 参考章节
 4，提示符显示文件中已录入最新数据
 """
 
-# 检测文件是否存在
+# 导入系统内置模块和外部模块
 import os
 import csv
 import datetime
@@ -33,9 +33,7 @@ if not os.path.exists(filename):
         f.write('Date,Height,Weight,BMI\n')
 
 
-# 定义用户录入函数
-# https://docs.python.org/3/library/functions.html#isinstance
-# 应当判断用户输入的有效性
+# 定义数据录入函数
 def data_input():
     # 获取当前系统时间数据 current_date current_time
     system_date = datetime.datetime.now().strftime('%Y-%m-%d')
@@ -56,7 +54,7 @@ def data_input():
     # 拼接数据
     new_data = current_date + ',' + str(current_height) + ',' + str(current_weight) + ',' + str(current_bmi) + '\n'
 
-    # 写入文件
+    # 写入文件，追加写模式
     with open(filename, 'a') as f_object:
         f_object.write(new_data)
 
@@ -78,8 +76,8 @@ def data_output():
         reader = csv.reader(f_object)
         header_row = next(reader)  # 读取文件头（首行）
 
-        dates, weights = [], []
-        for row in reader:
+        dates, weights = [], []  # 定义空列表以存储遍历到的数据
+        for row in reader:  # 从第二行开始遍历
             date = row[0]
             weight = float(row[2])  # 将遍历到的字符串数值转换为浮点数
 
@@ -88,9 +86,11 @@ def data_output():
 
     # 函数figure()用于指定图表的宽度、高度、分辨率和背景色
     fig = plt.figure(dpi=128, figsize=(10, 6))
-    plt.plot(dates, weights, c='red')
+    # 绘图
+    plt.plot(dates, weights, c='red')  # 分别传入x坐标和y坐标值列表
 
-    plt.title("Weight Record 2021", fontsize=24)
+    # 设置标题，x和y轴标签属性
+    plt.title("Weight Records From 2021", fontsize=24)
     plt.xlabel("", fontsize=16)
     fig.autofmt_xdate()  # 绘制斜的日期标签
     plt.ylabel("Weight (Kg)", fontsize=16)
