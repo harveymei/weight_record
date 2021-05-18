@@ -20,7 +20,7 @@ Python Crash Book 参考章节
 4，提示符显示文件中已录入最新数据
 """
 
-# 导入系统内置模块和外部模块
+# 导入Python内置模块和外部模块
 import os
 import csv
 import datetime
