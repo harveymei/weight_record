@@ -97,7 +97,7 @@ def data_output():
     plt.xlabel("", fontsize=16)
     fig.autofmt_xdate()  # 绘制斜的日期标签
     plt.ylabel("Weight (Kg)", fontsize=16)
-    plt.tick_params(axis='both', which='major', labelsize=8)
+    plt.tick_params(axis='both', which='major', labelsize=16)
 
     # plt.show()
     saved_file = datetime.datetime.now().strftime('%Y%m%d%H%M%S')  # 日期对象转换为日期字符串
