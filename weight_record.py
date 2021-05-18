@@ -97,7 +97,8 @@ def data_output():
     # 设置标题，x和y轴标签属性
     plt.title("Weight Records From 2021", fontsize=24)
     plt.xlabel("", fontsize=16)
-    fig.autofmt_xdate()  # 绘制斜的日期标签
+    # https://matplotlib.org/stable/api/figure_api.html?highlight=autofmt_xdate#matplotlib.figure.Figure.autofmt_xdate
+    fig.autofmt_xdate()  # 绘制斜的日期标签，默认参数值为右对齐旋转30度
     plt.ylabel("Weight (Kg)", fontsize=16)
     plt.tick_params(axis='both', which='major', labelsize=16)
 
