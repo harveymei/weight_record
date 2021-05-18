@@ -38,14 +38,14 @@ if not os.path.exists(filename):
 # 应当判断用户输入的有效性
 def data_input():
     # 获取当前系统时间数据 current_date current_time
-    current_system_date = datetime.datetime.now().strftime('%Y-%m-%d')
+    system_date = datetime.datetime.now().strftime('%Y-%m-%d')
 
     # 获取用户输入输入
-    current_date = input("请输入当前日期数值或直接按回车键使用默认数值: " + '(' + current_system_date + ') ')
+    current_date = input("请输入当前日期数值或直接按回车键使用默认数值: " + "(" + system_date + ") ")
     if current_date == '':
-        current_date = current_system_date
+        current_date = system_date
 
-    current_height = input("请输入当前身高数值或直接按回车键使用默认数值(m): (1.72)")
+    current_height = input("请输入当前身高数值或直接按回车键使用默认数值(m): (1.72) ")
     if current_height == '':
         current_height = 1.72
 
