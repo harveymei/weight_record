@@ -90,7 +90,8 @@ def data_output():
             dates.append(date)
             weights.append(weight)
 
-    # 设置中文字体
+    # 设置中文字体（思源宋体）
+    # https://matplotlib.org/stable/api/font_manager_api.html
     # https://github.com/adobe-fonts/source-han-serif/tree/release/
     # https://github.com/adobe-fonts/source-han-serif/raw/release/OTF/SourceHanSerifSC_EL-M.zip
     font_path = "SourceHanSerifSC_EL-M/SourceHanSerifSC-Light.otf"
