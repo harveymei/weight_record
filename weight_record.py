@@ -79,7 +79,8 @@ def data_output():
         dates, weights = [], []  # 定义空列表以存储遍历到的数据
         for row in reader:  # 从第二行开始遍历
             # 当字符串日期直接放入列表时，将绘制所有日期标签
-            # 当字符串日期转换为日期对象后，将会随数据增加和腿标宽度自适应绘制日期标签
+            # date = row[0]
+            # 当字符串日期转换为日期对象后，将会随数据增加和图表宽度自适应绘制日期标签
             date = datetime.datetime.strptime(row[0], '%Y-%m-%d')  # 字符串日期转换为日期对象
             weight = float(row[2])  # 将遍历到的字符串数值转换为浮点数
 
