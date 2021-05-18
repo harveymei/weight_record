@@ -25,6 +25,7 @@ import os
 import csv
 import datetime
 from matplotlib import pyplot as plt
+import matplotlib.font_manager as mfm
 
 # 检查数据文件是否存在，不存在则创建
 filename = 'weight_record.csv'
@@ -89,13 +90,19 @@ def data_output():
             dates.append(date)
             weights.append(weight)
 
+    # 设置中文字体
+    # https://github.com/adobe-fonts/source-han-serif/tree/release/
+    # https://github.com/adobe-fonts/source-han-serif/raw/release/OTF/SourceHanSerifSC_EL-M.zip
+    font_path = "SourceHanSerifSC_EL-M/SourceHanSerifSC-Light.otf"
+    prop = mfm.FontProperties(fname=font_path)
+
     # 函数figure()用于指定图表的宽度、高度、分辨率和背景色
     fig = plt.figure(dpi=128, figsize=(10, 6))
     # 绘图
     plt.plot(dates, weights, c='red')  # 分别传入x坐标和y坐标值列表
 
     # 设置标题，x和y轴标签属性
-    plt.title("Weight Records From 2021", fontsize=24)
+    plt.title("Weight Records From 2021 中文", fontsize=24, fontproperties=prop)
     plt.xlabel("", fontsize=16)
     # https://matplotlib.org/stable/api/figure_api.html?highlight=autofmt_xdate#matplotlib.figure.Figure.autofmt_xdate
     fig.autofmt_xdate()  # 绘制斜的日期标签，默认参数值为右对齐旋转30度
