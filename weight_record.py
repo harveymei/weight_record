@@ -35,7 +35,7 @@ if not os.path.exists(filename):
 
 # 定义数据录入函数
 def data_input():
-    # 获取当前系统时间数据
+    # 获取当前系统时间
     system_date = datetime.datetime.now().strftime('%Y-%m-%d')  # 日期对象转换为日期字符串
 
     # 获取用户输入输入
