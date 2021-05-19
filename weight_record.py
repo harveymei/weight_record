@@ -79,16 +79,20 @@ def data_output():
         reader = csv.reader(f_object)
         header_row = next(reader)  # 读取文件头（首行）
 
-        dates, weights = [], []  # 定义空列表以存储遍历到的数据
+        date_list, weight_list, bmi_list = [], [], []  # 定义空列表以存储遍历到的数据
         for row in reader:  # 从第二行开始遍历
             # 当字符串日期直接放入列表时，将绘制所有日期标签
             # date = row[0]
             # 当字符串日期转换为日期对象后，将会随数据增加和图表宽度自适应绘制日期标签
             date = datetime.datetime.strptime(row[0], '%Y-%m-%d')  # 字符串日期转换为日期对象
             weight = float(row[2])  # 将遍历到的字符串数值转换为浮点数
+            bmi = float(row[-1])
 
-            dates.append(date)
-            weights.append(weight)
+            date_list.append(date)
+            weight_list.append(weight)
+            bmi_list.append(bmi)
+            last_date = datetime.datetime.strftime(date_list[-1], '%Y-%m-%d')
+            last_bmi = str(bmi_list[-1])
 
     # 设置中文字体（思源宋体）
     # https://matplotlib.org/stable/api/font_manager_api.html
@@ -100,11 +104,12 @@ def data_output():
     # 函数figure()用于指定图表的宽度、高度、分辨率和背景色
     fig = plt.figure(dpi=128, figsize=(10, 6))
     # 绘图
-    plt.plot(dates, weights, c='red')  # 分别传入x坐标和y坐标值列表
+    plt.plot(date_list, weight_list, c='red')  # 分别传入x坐标和y坐标值列表
 
     # 设置标题，x和y轴标签属性
-    plt.title("Weight Records From 2021 中文", fontsize=24, fontproperties=prop)
-    plt.xlabel("", fontsize=16)
+    plt.title("Harvey's Weight Records From 2021", fontsize=24, fontproperties=prop)
+    plt.xlabel("最佳BMI值范围: 19-24 当前值: "
+               + last_bmi + " 最后更新: " + last_date, fontsize=16, fontproperties=prop)
     # https://matplotlib.org/stable/api/figure_api.html?highlight=autofmt_xdate#matplotlib.figure.Figure.autofmt_xdate
     fig.autofmt_xdate()  # 绘制斜的日期标签，默认参数值为右对齐旋转30度
     plt.ylabel("Weight (Kg)", fontsize=16)
