@@ -46,16 +46,16 @@ def data_input():
     if current_date == '':
         current_date = system_date
 
-    current_height = float(input("请输入当前身高数值或直接按回车键使用默认数值(m): (1.72) "))
+    current_height = input("请输入当前身高数值或直接按回车键使用默认数值(m): (1.72) ")
     if current_height == '':
         current_height = 1.72
 
-    current_weight = float(input("请输入当前体重数值(kg): "))
+    current_weight = input("请输入当前体重数值(kg): ")
 
-    current_bmi = round(current_weight / (current_height ** 2), 2)
+    current_bmi = round(float(current_weight) / (current_height ** 2), 2)
 
     # 拼接数据
-    new_data = current_date + ',' + str(current_height) + ',' + str(current_weight) + ',' + str(current_bmi) + '\n'
+    new_data = current_date + ',' + str(current_height) + ',' + current_weight + ',' + str(current_bmi) + '\n'
 
     # 写入文件，追加写模式
     with open(filename, 'a') as f_object:
