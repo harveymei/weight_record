@@ -108,6 +108,9 @@ def data_output():
 
     # 设置标题，x和y轴标签属性
     plt.title("Harvey's Weight Records From 2021", fontsize=24)
+    # 添加网格
+    # https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html
+    plt.grid(True)
     plt.xlabel("最佳BMI值范围: 19-24 当前值: "
                + last_bmi + " 最后更新: " + last_date, fontsize=16, fontproperties=prop)
     # https://matplotlib.org/stable/api/figure_api.html?highlight=autofmt_xdate#matplotlib.figure.Figure.autofmt_xdate
