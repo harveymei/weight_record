@@ -7,17 +7,17 @@
 # @GitHub  : https://github.com/harveymei/
 
 """
-Python Cook Book 参考章节
-Json操作 6.2
-文件操作 5.5
+参考书目：
+Python Cook Book
+Python Crash Course
 
-Python Crash Book 参考章节
-
-当前待完善特性：
-1，matplotlib图形中中文字符的支持
-2，判断用户输入非法字符的异常处理
-3，根据自动计算的BMI值，合并绘图
-4，提示符显示文件中已录入最新数据
+功能特性：
+1，引入os模块检查文件是否存在
+2，引入csv模块读写csv格式文件
+3，引入datetime模块处理时间类型与字符串类型日期的格式化转换
+4，根据录入的身高及体重数据自动计算的BMI值
+5，引入font_manager模块，处理中文字符显示
+6，用户操作选项
 """
 
 # 导入Python内置模块和外部模块
