@@ -136,5 +136,8 @@ if option == '1':
 elif option == '2':
     print("开始数据输出……")
     data_output()
+elif option == '3':
+    print("退出程序……")
+    exit()
 else:
     print("输入错误")
