@@ -66,7 +66,7 @@ def data_input():
     if key == 'c':
         data_input()
     elif key == 'q':
-        # exit(） # 由退出主程序，改为调用启动菜单
+        # exit(） # 由直接退出主程序，改为调用启动菜单退出主程序
         menu()
     else:
         print("错误输入")
