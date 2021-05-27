@@ -66,7 +66,8 @@ def data_input():
     if key == 'c':
         data_input()
     elif key == 'q':
-        exit()
+        # exit(） # 由退出主程序，改为调用启动菜单
+        menu()
     else:
         print("错误输入")
 
@@ -123,18 +124,26 @@ def data_output():
     plt.savefig(saved_file + '.png')
 
 
-# 打印信息，提示用户操作
-print("请选择将要执行的操作:\n"
-      "1) 录入新数据\n"
-      "2) 查看可视化数据")
-
 # 提示用户输入并判断输入有效性
-option = input("请输入编号并按回车键: ")
-if option == '1':
-    print("开始数据录入……")
-    data_input()
-elif option == '2':
-    print("开始数据输出……")
-    data_output()
-else:
-    print("输入错误")
+def menu():
+    # 打印信息，提示用户操作
+    print("请选择将要执行的操作:\n"
+          "1) 录入新数据\n"
+          "2) 查看可视化数据\n"
+          "q) 退出程序")
+
+    option = input("请输入编号并按回车键: ")
+    if option == '1':
+        print("开始数据录入……")
+        data_input()
+    elif option == '2':
+        print("开始数据输出……")
+        data_output()
+    elif option == 'q':
+        exit()
+    else:
+        print("输入错误")
+
+
+# 程序启动默认调用menu()函数
+menu()
