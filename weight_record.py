@@ -103,7 +103,7 @@ def data_output():
     prop = mfm.FontProperties(fname=font_path)
 
     # 函数figure()用于指定图表的宽度、高度、分辨率和背景色
-    fig = plt.figure(dpi=128, figsize=(10, 6))
+    fig = plt.figure(dpi=128, figsize=(10, 6))  # (10 inches x 128 dpi) x (6 inches x 128 dpi)= 1280 x 768 pixels
     # 绘图
     plt.plot(date_list, weight_list, c='red')  # 分别传入x坐标和y坐标值列表
 
