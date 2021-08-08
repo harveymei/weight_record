@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/weightrecord.iml" filepath="$PROJECT_DIR$/.idea/weightrecord.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/weight_record.iml" filepath="$PROJECT_DIR$/.idea/weight_record.iml" />
     </modules>
   </component>
 </project>
